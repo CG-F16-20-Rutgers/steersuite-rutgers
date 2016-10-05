@@ -25,6 +25,17 @@ namespace SteerLib
 	public:
 		GJK_EPA();
 
+		static bool GJK(const std::vector<Util::Vector>& _shapeA, const std::vector<Util::Vector>& _shapeB, std::vector<Util::Vector>& simplex);
+
+		static int furthestIndex(Util::Vector dir, const std::vector<Util::Vector>& _shapeA);
+
+		static Util::Vector Support(const std::vector<Util::Vector>& _shapeA, const std::vector<Util::Vector>& _shapeB, Util::Vector dir);
+
+		static bool DoSimplex(Util::Vector& dir, std::vector<Util::Vector>& simplex);
+
+		static bool EPA(const std::vector<Util::Vector>& _shapeA, const std::vector<Util::Vector>& _shapeB, std::vector<Util::Vector>& simplex, float& pdepth, Util::Vector& pvector);
+
+		static void getEdge(std::vector<Util::Vector>& simplex, float& d, Util::Vector& norm, int& index);
 		/*
 		*
 		*  DO NOT CHANGE THE FUNCTION DEFINITION FOR intersect()
